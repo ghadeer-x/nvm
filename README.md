@@ -14,3 +14,6 @@ end
 request = function()
     return wrk.format("GET", target_url)
 end
+
+
+wrk -t10 -c3000 -d30s proxy -s proxy.lua -- dist
